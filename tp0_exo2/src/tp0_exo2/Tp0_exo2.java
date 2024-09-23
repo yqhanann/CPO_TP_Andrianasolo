@@ -20,7 +20,7 @@ public class Tp0_exo2 {
     public static void main(String[] args) {
         int nb;
         int result;     
-        Scanner sc = new Scanner (System.in);
+            Scanner sc = new Scanner (System.in);
         System.out.println("\nEntrer le nombre : ");
         nb = sc.nextInt();      
         int ind;
