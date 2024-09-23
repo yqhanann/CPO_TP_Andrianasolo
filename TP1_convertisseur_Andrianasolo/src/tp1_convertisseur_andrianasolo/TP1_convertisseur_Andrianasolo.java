@@ -24,28 +24,28 @@ public class TP1_convertisseur_Andrianasolo {
         
         System.out.println("Bonjour, saisissez une valeur à convertir    : ");
         String choix = sc.nextLine();
-        if( choix == "CelciusVersKelvin" ){
-        double var2 = CelciusVersKelvin(var);
-        System.out.println("degré Kelvin est égal à" +var2+ "degrés Celcius");
+        if( "CelciusVersKelvin".equals(choix) ){
+            double var2 = CelciusVersKelvin(var);
+            System.out.println("degré Kelvin est égal à" +var2+ "degrés Celcius");
         }
         
-        if( choix == "KelvinVersCelcius" ){
+        if( "KelvinVersCelcius".equals(choix) ){
             double var2 = KelvinVersCelcius(var);
             System.out.println("degré Celcius est égal à" +var2+ "degrés Kelvin");
         }
-        if( choix == "FarenheitVersCelcius" ){
+        if( "FarenheitVersCelcius".equals(choix) ){
             double var2 = FarenheitVersCelcius(var);
             System.out.println("degré Farenheit est égal à" +var2+ "degrés Celcius");
         }
-        if( choix == "CelciusVersFarenheit" ){
+        if( "CelciusVersFarenheit".equals(choix) ){
             double var2 = FarenheitVersCelcius(var);
             System.out.println("degré Farenheit est égal à" +var2+ "degrés Celcius");
         }
-        if( choix == "KelvinVersFarenheit" ){
+        if( "KelvinVersFarenheit".equals(choix) ){
             double var2 = KelvinVersFarenheit(var);
             System.out.println("degré Kelvin est égal à" +var2+ "degrés Farenheit");
         }
-       if( choix == "FarenheitVersKelvin" ){
+       if( "FarenheitVersKelvin".equals(choix) ){
             double var2 = FarenheitVersKelvin(var);
             System.out.println("degré Farenheit est égal à" +var2+ "degrés Kelvin");
         }
