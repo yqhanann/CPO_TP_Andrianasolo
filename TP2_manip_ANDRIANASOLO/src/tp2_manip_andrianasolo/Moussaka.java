@@ -9,9 +9,10 @@ package tp2_manip_andrianasolo;
  * @author yohan
  */
 public class Moussaka{
+    public int nbCalories;
     
-    public Moussaka(int nbCalories){
-        
+    public Moussaka(int calories){
+        this.nbCalories = calories;
                 }
  
 }
