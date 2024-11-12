@@ -12,9 +12,20 @@ public class Voiture {
     public String Modele;
     public int Puissance;
     public String Voiture;
+    public Personne personne;
+    public Personne propietaire;
     
+    public Voiture(String modele, String voiture, int puis){
+    this.Modele = modele;
+    this.Voiture = voiture;  
+    this.Puissance = puis;
+    this.propietaire = null;
     
-    public Voiture()
-    this.modele = Modele;
+}
+    @Override
+    public String toString() {
+        String chaine_a_retourner;
+        chaine_a_retourner = "Object : "+Modele+" "+Voiture+" "+ Puissance;
+        return chaine_a_retourner;
 }
 }
