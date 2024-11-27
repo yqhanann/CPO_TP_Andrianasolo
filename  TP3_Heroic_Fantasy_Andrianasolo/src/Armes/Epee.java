@@ -11,15 +11,23 @@ import Armes.Arme;
  * @author yohan
  */
 public class Epee extends Arme {
-
+    private int finesse;
     public double indice;
 
-    public Epee(String nom, double attaque, double indice) {
-        super(nom, attaque);
-        this.indice = indice;
-        if (attaque > 0 && attaque < 100) {
-            this.Attaque = attaque;
+    public Epee(String nom, int niveauAttaque, int finesse) {
+        super(nom, niveauAttaque);
+        
+        this.finesse = finesse;
+        
+        if (niveauAttaque > 0 && niveauAttaque < 100) {
+            this.niveauAttaque = niveauAttaque;
         }
     }
-
+ public int getFinesse() {
+        return finesse;
+    }
+@Override
+    public String toString() {
+        return super.toString() + ", Finesse: " + finesse;
+    }
 }

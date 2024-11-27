@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Personnages;
+import Armes.Baton;
 import Personnages.Personnage;
 /**
  *
@@ -10,19 +11,51 @@ import Personnages.Personnage;
  */
 public class Magicien extends Personnage {
 
-    public boolean A_cheval;
-    public String Type;
+    public boolean estConfirme;
 
     public Magicien(String Nom, int Vie, boolean A_cheval) {
         super(Nom, Vie);
-        this.A_cheval = A_cheval;
-        this.Type = "Magicien";
+        this.estConfirme = estConfirme;
         totalMagiciens++;
 
     }
+    protected void finalize() throws Throwable {
+        totalMagiciens--;
+        super.finalize();
+    }
 
-    public void setA_cheval(boolean A_cheval) {
-        this.A_cheval = A_cheval;
+    /**
+     *
+     * @param cible
+     */
+    @Override
+ public void attaquer(Personnage cible) {
+        if (!this.aUneArmeEquipee()) {
+            System.out.println(this.Nom + " n'a pas d'arme équipée pour attaquer !");
+            return;
+        }
+
+        int degats = 0;
+        if (this.arme_en_main instanceof Baton) {
+            Baton baton = (Baton) this.arme_en_main;
+            degats = baton.getNiveauAttaque() * baton.getAge();
+        } else {
+            degats = this.arme_en_main.getNiveauAttaque();
+        }
+
+        if (this.estConfirme) {
+            degats /= 2; // Les dégâts sont divisés par 2 si le magicien est confirmé
+        }
+
+        cible.estAttaque(degats); // Applique les dégâts à la cible
+        this.seFatiguer(); // Le magicien se fatigue après l'attaque
+
+        System.out.println(this.Nom + " attaque " + cible.Nom + " avec " + this.arme_en_main.getNom() +
+                " et inflige " + degats + " points de dégâts !");
+    }
+    
+    public void setEstConfirme(boolean A_cheval) {
+        this.estConfirme = estConfirme;
     }
 
 }

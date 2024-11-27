@@ -11,28 +11,29 @@ package Armes;
 public abstract class Arme {
 
     public String Nom;
-    public double Attaque;
+    public int niveauAttaque;
 
-    public Arme(String nom, double attaque) {
+    public Arme(String nom, int niveauAttaque) {
         this.Nom = nom;
-        if (attaque > 0 && attaque < 100) {
-            this.Attaque = attaque;
+        if (niveauAttaque > 0 && niveauAttaque < 100) {
+            this.niveauAttaque = niveauAttaque;
         }
+         this.niveauAttaque = niveauAttaque;
     }
 
     public double getAttaque() {
-        return Attaque;
+        return niveauAttaque;
     }
 
     public String getNom() {
         return Nom;
     }
-
-    @Override
+public int getNiveauAttaque() {
+        return niveauAttaque;
+    }
+   @Override
     public String toString() {
-        String chaine_a_retourner;
-        chaine_a_retourner = "Arme{" + "Nom=" + Nom + ", Attaque=" + Attaque +"}";
-        return chaine_a_retourner;
+        return "Arme: " + Nom + ", Niveau d'attaque: " + niveauAttaque;
     }
 
 }

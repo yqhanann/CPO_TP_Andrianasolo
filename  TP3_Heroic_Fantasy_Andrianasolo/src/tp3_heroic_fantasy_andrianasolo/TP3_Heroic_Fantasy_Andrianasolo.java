@@ -20,6 +20,11 @@ import java.util.Iterator;
  * @author yohan
  */
 public class TP3_Heroic_Fantasy_Andrianasolo {
+    public interface etreVivant {
+    void seFatiguer(); // Fatigue : perte de 10 points de vie
+    boolean estVivant(); // Vérifie si l'entité est vivante
+    void estAttaque(int points); // Réduit les points de vie lors d'une attaque
+}
 
     public static void main(String[] args) {
         Epee Excalibure = new Epee("Excalibur", 7, 5);
@@ -29,8 +34,8 @@ public class TP3_Heroic_Fantasy_Andrianasolo {
         Baton Charme = new Baton("Charme", 5, 6);
         Baton Baton3 = new Baton("Baton3", 5, 6);
         
-        Guerrier Conan = new Guerrier("Conan", 78, true);
-        Guerrier Lannister = new Guerrier("Lannister", 78, false);
+        Guerrier Conan = new Guerrier("Conan", 78, true, true);
+        Guerrier Lannister = new Guerrier("Lannister", 78, false, true);
         Magicien Gandalf = new Magicien("Gandalf", 65, true);
         Magicien Garcimore = new Magicien("Garcimore", 65, true);
 
@@ -42,7 +47,25 @@ public class TP3_Heroic_Fantasy_Andrianasolo {
         Gandalf.rajouterArme(Baton3);
         Gandalf.rajouterArme(Epee3);
         Conan.equiper_arme("Excalibure");
+         Conan.seFatiguer();
 
+    // Étape 3 : Afficher les caractéristiques du guerrier et vérifier s'il est vivant
+    System.out.println("\nCaractéristiques du guerrier après la fatigue :");
+    System.out.println(Conan);
+    if (Conan.estVivant()) {
+        System.out.println("Le guerrier est toujours vivant.");
+    } else {
+        System.out.println("Le guerrier est mort.");
+    }
+
+    // Étape 4 : Le guerrier attaque le magicien
+    Conan.attaquer(Gandalf);
+
+    // Afficher les caractéristiques des deux personnages après l'attaque
+    System.out.println("\nCaractéristiques après l'attaque :");
+    System.out.println(Conan);
+    System.out.println(Gandalf);
+    
         // Liste des personnages
         ArrayList<Personnage> listePersonnage = new ArrayList<Personnage>();
         listePersonnage.add(Conan);
