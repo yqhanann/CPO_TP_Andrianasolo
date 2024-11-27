@@ -13,6 +13,7 @@ import Armes.Arme;
 public class Baton extends Arme {
 
     public double indice;
+    
 
     public Baton(String nom, double attaque, double indice) {
         super(nom, attaque);

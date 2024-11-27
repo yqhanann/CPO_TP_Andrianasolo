@@ -11,10 +11,12 @@ package Personnages;
 public class Guerrier extends Personnage {
 
     public boolean Confirmer;
+    public String Type;
 
     public Guerrier(String Nom, int Vie, boolean Confirmer) {
         super(Nom, Vie);
         this.Confirmer = Confirmer;
+        this.Type = "Guerrier";
 
     }
 

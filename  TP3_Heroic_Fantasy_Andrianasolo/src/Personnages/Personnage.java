@@ -15,22 +15,38 @@ import Armes.Arme;
 public abstract class Personnage {
     public String Nom;
     public int Vie;
-    Arme ajouter;
-    ArrayList<Arme> tab2 = new ArrayList<>();
+    public Arme arme;
+    public ArrayList<Arme> armePersonnage;
+    Arme arme_en_main;
+    public String Type;
     
     public Personnage(String Nom, int Vie){
+            this.armePersonnage = new ArrayList<>();
         this.Nom = Nom;
         this.Vie = Vie;
+   }
     
-        
+    public void rajouterArme(Arme arme){
+    if(armePersonnage.size()<5){
+        armePersonnage.add(arme);}
+
+}   public void equiper_arme (String nomarme){
+        for (int i=0 ; i<armePersonnage.size() ; i++){
+            if (armePersonnage.get(1).getNom().equals(nomarme)){
+                arme_en_main=armePersonnage.get(i);
+                System.out.println("L'arme à été trouvé et équipée");  
+        }
+    }
+    }
+     
    
         
         
-}
+
     @Override
     public String toString() {
         String chaine_a_retourner;
-        chaine_a_retourner = "Object : "+Nom+" "+Vie;
+        chaine_a_retourner = "Object : "+Nom+" "+","+Vie+","+arme_en_main;
         return chaine_a_retourner;
     }
 }

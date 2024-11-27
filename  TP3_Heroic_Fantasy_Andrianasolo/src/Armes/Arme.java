@@ -20,18 +20,18 @@ public abstract class Arme {
         }
     }
 
-    public double return_Attaque() {
+    public double getAttaque() {
         return Attaque;
     }
 
-    public String return_Nom() {
+    public String getNom() {
         return Nom;
     }
 
     @Override
     public String toString() {
         String chaine_a_retourner;
-        chaine_a_retourner = "Object : " + Nom + " " + Attaque;
+        chaine_a_retourner = "Arme{" + "Nom=" + Nom + ", Attaque=" + Attaque +"}";
         return chaine_a_retourner;
     }
 

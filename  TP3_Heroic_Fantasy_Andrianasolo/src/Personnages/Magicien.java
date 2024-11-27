@@ -11,10 +11,12 @@ import Personnages.Personnage;
 public class Magicien extends Personnage {
 
     public boolean A_cheval;
+    public String Type;
 
     public Magicien(String Nom, int Vie, boolean A_cheval) {
         super(Nom, Vie);
         this.A_cheval = A_cheval;
+        this.Type = "Magicien";
 
     }
 
