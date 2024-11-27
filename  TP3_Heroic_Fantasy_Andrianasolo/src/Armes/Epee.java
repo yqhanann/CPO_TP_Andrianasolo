@@ -10,20 +10,16 @@ import Armes.Arme;
  *
  * @author yohan
  */
-public class Epee extends Arme{
+public class Epee extends Arme {
+
     public double indice;
-    
-    public Epee(String nom, double attaque,double indice) {
+
+    public Epee(String nom, double attaque, double indice) {
         super(nom, attaque);
         this.indice = indice;
-        if(attaque>0 && attaque<100){
-        this.Attaque  = attaque;}
+        if (attaque > 0 && attaque < 100) {
+            this.Attaque = attaque;
+        }
     }
-    
-    
-    
 
 }
-        
-        
-        

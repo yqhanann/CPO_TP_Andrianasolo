@@ -9,31 +9,30 @@ package Armes;
  * @author yohan
  */
 public abstract class Arme {
+
     public String Nom;
     public double Attaque;
-   
-    
-    
-public Arme(String nom, double attaque){
-this.Nom = nom;
-if (attaque>0 && attaque <100)
-{this.Attaque = attaque;}
-}
 
-public double return_Attaque(){
-    return Attaque;
-}
-public String return_Nom(){
-return Nom;
-}
+    public Arme(String nom, double attaque) {
+        this.Nom = nom;
+        if (attaque > 0 && attaque < 100) {
+            this.Attaque = attaque;
+        }
+    }
 
-@Override
-public String toString() {
-    String chaine_a_retourner;
-    chaine_a_retourner = "Object : "+Nom+" "+Attaque;
-    return chaine_a_retourner;
+    public double return_Attaque() {
+        return Attaque;
+    }
+
+    public String return_Nom() {
+        return Nom;
+    }
+
+    @Override
+    public String toString() {
+        String chaine_a_retourner;
+        chaine_a_retourner = "Object : " + Nom + " " + Attaque;
+        return chaine_a_retourner;
+    }
+
 }
-
-
-}
-
