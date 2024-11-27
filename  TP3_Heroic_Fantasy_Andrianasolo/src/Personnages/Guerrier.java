@@ -17,7 +17,7 @@ public class Guerrier extends Personnage {
         super(Nom, Vie);
         this.Confirmer = Confirmer;
         this.Type = "Guerrier";
-
+        totalGuerriers++;
     }
 
     public void setConfirmer(boolean Confirmer) {

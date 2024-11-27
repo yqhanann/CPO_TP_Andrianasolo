@@ -19,11 +19,15 @@ public abstract class Personnage {
     public ArrayList<Arme> armePersonnage;
     Arme arme_en_main;
     public String Type;
+    public static int totalPersonnages = 0;
+    public static int totalGuerriers = 0;
+    public static int totalMagiciens = 0;
     
     public Personnage(String Nom, int Vie){
             this.armePersonnage = new ArrayList<>();
         this.Nom = Nom;
         this.Vie = Vie;
+        totalPersonnages++;
    }
     
     public void rajouterArme(Arme arme){
@@ -36,11 +40,15 @@ public abstract class Personnage {
                 arme_en_main=armePersonnage.get(i);
                 System.out.println("L'arme à été trouvé et équipée");  
         }
+            
     }
     }
      
    
-        
+   public static String getStats() {
+        return "Total Personnages: " + totalPersonnages +
+               ", Total Guerriers: " + totalGuerriers +
+               ", Total Magiciens: " + totalMagiciens;}     
         
 
     @Override

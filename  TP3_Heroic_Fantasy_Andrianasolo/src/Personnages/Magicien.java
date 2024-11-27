@@ -17,6 +17,7 @@ public class Magicien extends Personnage {
         super(Nom, Vie);
         this.A_cheval = A_cheval;
         this.Type = "Magicien";
+        totalMagiciens++;
 
     }
 
